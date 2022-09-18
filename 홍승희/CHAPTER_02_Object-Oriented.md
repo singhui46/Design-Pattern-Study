@@ -73,13 +73,27 @@ password를 `복호화`하고,
 - c#과 같은 언어에서는 메써드 호출을 의미   
 
 </br>
-sequenceDiagram
-   Alice->>Bob: Hi Bob. How are you?
-   opt process 
-      Bob->>Alice: Good!
-   end
-   
-</br>
 
+# Lines starting with # are comments.
+title: Secure food delivery
+
+# We can optionally create aliases for participants so they have
+# shorter names.
+participant Bob as b
+
+Alice->Bob: Authentication request
+
+# Instead of referring to "Bob" we can use his alias, "b".
+note right of b: Thinks about it
+Bob->Alice: Authentication response
+Alice-->Bob: optional negotiation
+Bob-->Alice: negotiation response
+note over Alice, Bob: Authentication complete
+
+note left of Alice: Hungry...
+Alice->>Bob: Food request
+Bob->Bob: Procure food
+Bob->>Alice: Food response
+note over Alice, Bob: Transaction complete
 
    
