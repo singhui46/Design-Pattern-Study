@@ -28,9 +28,9 @@
  
 </br>
 
-*ex. connection.conf 파일에서 "mssql:ACCT"라는 아이디에 해당하는 `연결 문자열을 읽어온 후` 
-password를 `복호화`하고, 
-복호화된 연결문자열로 `DB에 연결`한다.*
+*ex. connection.conf 파일에서 "mssql:ACCT"라는 아이디에 해당하는 `연결 문자열을 읽어온 후`   
+password를 `복호화`하고,    
+복호화된 연결문자열로 `DB에 연결`한다.*   
   
 1. 파일 읽기 객체 <br/> 
 
@@ -75,14 +75,14 @@ password를 `복호화`하고,
 <br/>  
 
 sequenceDiagram
-    actor A as client
-    participant B as app
-    A->B: 끝이 화살표 없는 실선
-    A-->B: 끝이 화살표 없는 점선
-    A->>B: 끝이 화살표 있는 실선
-    A-->>B: 끝이 화살표 있는 점선
-    A-xB: 끝이 X로 표시되는 실선
-    A--xB: 끝이 X로 표시되는 점선
-    A-)B: 끝이 열린 화살표인 실선 ( async )
-    A--)B: 끝이 열린 화살표인 점선 ( async )
-
+    Alice->>John: Hello John, how are you?
+    activate John
+    John-->>Alice: Great!
+    deactivate John
+    Alice->>+John: Hello John, how are you?
+    John-->>-Alice: Great!
+    Alice->>+John: Hello John, how are you?
+    Alice->>+John: John, can you hear me?
+    John-->>-Alice: Hi Alice, I can hear you!
+    John-->>-Alice: I feel great!   
+   
