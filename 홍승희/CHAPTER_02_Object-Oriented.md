@@ -69,20 +69,15 @@ password를 `복호화`하고,
 </br></br>
 
 ### [4] 메시지 
-- 다른 객체에 오퍼레이션 실행을 요청
+- 다른 객체에 오퍼레이션 실행을 요청한다. = `메시지를 보낸다.`
 - c#과 같은 언어에서는 메써드를 호출하는 것을 의미   
 
 <br/>  
-
 sequenceDiagram
-    Alice->>John: Hello John, how are you?
-    activate John
-    John-->>Alice: Great!
-    deactivate John
-    Alice->>+John: Hello John, how are you?
-    John-->>-Alice: Great!
-    Alice->>+John: Hello John, how are you?
-    Alice->>+John: John, can you hear me?
-    John-->>-Alice: Hi Alice, I can hear you!
-    John-->>-Alice: I feel great!   
+    Alice->John: 안녕, 오늘 어때 ?
+    loop Every minute
+        John-->Alice: 좋아!
+    end
+    
+    
    
