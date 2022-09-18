@@ -28,7 +28,9 @@
  
 </br>
 
-*ex. connection.conf 파일에서 "mssql:ACCT"라는 아이디에 해당하는 `연결 문자열을 읽어온 후` password를 `복호화`하고, 복호화된 연결문자열로 `DB에 연결`한다.*
+*ex. connection.conf 파일에서 "mssql:ACCT"라는 아이디에 해당하는 `연결 문자열을 읽어온 후` 
+password를 `복호화`하고, 
+복호화된 연결문자열로 `DB에 연결`한다.*
   
 1. 파일 읽기 객체 <br/> 
 
@@ -47,9 +49,7 @@
 |오퍼레이션 아름|파라미터|결과|
 |---|---|---|
 |CreateDbConnection()|복호화된 연결 문자열|DB 연결 객체|  
-
-<br/>
-
+   
 => 객체는 오퍼레이션들로 구성/정의되어 있고, 각 `오퍼레이션은 자신만의 signature를 갖는다.`   
 => 객체의 오퍼레이션을 사용하려면, 해당 기능의 `signature를 알아야` 한다. 
 
@@ -71,7 +71,9 @@
 ### [4] 메시지 
 - 다른 객체에 오퍼레이션 실행을 요청
 - c#과 같은 언어에서는 메써드를 호출하는 것을 의미   
+
 <br/>  
+
 sequenceDiagram
     actor A as client
     participant B as app
@@ -83,8 +85,4 @@ sequenceDiagram
     A--xB: 끝이 X로 표시되는 점선
     A-)B: 끝이 열린 화살표인 실선 ( async )
     A--)B: 끝이 열린 화살표인 점선 ( async )
-
-
-
-
 
