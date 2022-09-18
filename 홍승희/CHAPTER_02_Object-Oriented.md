@@ -74,10 +74,12 @@ password를 `복호화`하고,
 
 </br>
 sequenceDiagram
-    Alice->John: 안녕, 오늘 어때 ?
-    loop Every minute
-        John-->Alice: 좋아!
-    end
-    
-    
+   Alice->>Bob: Hi Bob. How are you?
+   opt process 
+      Bob->>Alice: Good!
+   end
+   
+</br>
+
+
    
