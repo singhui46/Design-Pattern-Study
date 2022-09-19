@@ -72,18 +72,8 @@ password를 `복호화`하고,
 - 다른 객체에 오퍼레이션 실행을 요청한다. = `메시지를 보낸다.`
 - c#과 같은 언어에서는 메써드 호출을 의미   
 
-</br>
-```mermaid
-%% Example of sequence diagram
-  sequenceDiagram
-    Alice->>Bob: Hello Bob, how are you?
-    alt is sick
-    Bob->>Alice: Not so good :(
-    else is well
-    Bob->>Alice: Feeling fresh like a daisy
-    end
-    opt Extra response
-    Bob->>Alice: Thanks for asking
-    end
+</br>   
+```sequence
+Alice->Bob: Hi
 ```
    
