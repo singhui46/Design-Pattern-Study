@@ -73,7 +73,13 @@ password를 `복호화`하고,
 - c#과 같은 언어에서는 메써드 호출을 의미   
 
 </br>   
-```sequence
-Alice->Bob: Hi
-```
-   
+
+*ex. connection.conf 파일에서 "mssql:ACCT"라는 아이디에 해당하는 `연결 문자열을 읽어온 후`   
+password를 `복호화`하고,    
+복호화된 연결문자열로 `DB에 연결`한다.*   
+
+``` sequence
+Main ----- CreateDbConnection() -----> [DB에 연결하는 객체] ----- ReadConfig() -----> [파일 읽기 객체] ----- DecryptConnString() -----> [암호화 처리 객체]
+``` 
+
+  
