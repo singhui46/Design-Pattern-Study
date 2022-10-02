@@ -21,7 +21,7 @@
 </br> 
 
 ## 개요
-> *"상속을 사용하면 상위 클래스에 구현된 기능을 그대로 재사용할 수 있기 때문에, `상속을 사용하면 재사용을 쉽게` 할 수 있는 것은 분명하다. 하지만 상속을 사용할 경우 몇 가지 문제점이 있는데 ..." *
+> *p.87 "상속을 사용하면 상위 클래스에 구현된 기능을 그대로 재사용할 수 있기 때문에, `상속을 사용하면 재사용을 쉽게` 할 수 있는 것은 분명하다. 하지만 상속을 사용할 경우 몇 가지 문제점이 있는데 ..."*
 
 </br>
 
@@ -29,41 +29,40 @@
 
 ```mermaid
 classDiagram
+      Controller <|-- AbstractController
+      Controller: +handleRequest()
+      <<interface>> Controller
       AbstractController <|-- AbstractUrlViewController
       AbstractController <|-- BaseCommandController
-      AbstractController: #handleRequestInterval()
       AbstractController: +handleRequest()
+      AbstractController: #handleRequestInterval()
+      AbstractUrlViewController <|-- UrlFilenameViewController
+      BaseCommandController <|-- AbstractCommandConstroller
+      BaseCommandController <|-- AbstractFormController      
+      AbstractFormController <|-- SimpleFormController
       class AbstractUrlViewController{
-          #handleRequestInternal()
-          #getViewNameForRequest()
+            #handleRequestInternal()
+            #getViewNameForRequest()
       }
       class BaseCommandController{
       }
-```
-
-```mermaid
-classDiagram
-      Animal <|-- Duck
-      Animal <|-- Fish
-      Animal <|-- Zebra
-      Animal : +int age
-      Animal : +String gender
-      Animal: +isMammal()
-      Animal: +mate()
-      class Duck{
-          +String beakColor
-          +swim()
-          +quack()
+      class UrlFilenameViewController{
+            #getViewNameForRequest()
       }
-      class Fish{
-          -int sizeInFeet
-          -canEat()
+      class AbstractCommandConstroller{
+            #handleRequestInternal()
+            #handle()
       }
-      class Zebra{
-          +bool is_wild
-          +run()
+      class AbstractFormController{
+            #handleRequestInternal()
+            #showForm()
+            #processFormSubmission()
+      }
+      class SimpleFormController{
       }
 ```
+- 웹 요청을 처리하기 위한 클래스  
+- 하위 클래스가 상위 클래스의 기능을 확장하고 있다. 
 
 </br></br>
 
