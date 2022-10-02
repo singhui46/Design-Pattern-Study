@@ -21,14 +21,49 @@
 </br> 
 
 ## 개요
-> "상속을 사용하면 상위 클래스에 구현된 기능을 그대로 재사용할 수 있기 때문에, 상속을 사용하면 <span style="color:#dcffe4">재사용</span>을 쉽게 할 수 있는 것은 분명하다. 하지만 상속을 사용할 경우 몇 가지 문제점이 있는데 ..."   
-
-<span style="background-color: #f6f8fa">재사용</span>  
-<mark>형광펜</mark>    
+> *"상속을 사용하면 상위 클래스에 구현된 기능을 그대로 재사용할 수 있기 때문에, `상속을 사용하면 재사용을 쉽게` 할 수 있는 것은 분명하다. 하지만 상속을 사용할 경우 몇 가지 문제점이 있는데 ..." *
 
 </br>
 
 ## 1. 상위 클래스 변경의 어려움
+
+```mermaid
+classDiagram
+      AbstractController <|-- AbstractUrlViewController
+      AbstractController <|-- BaseCommandController
+      AbstractController: #handleRequestInterval()
+      AbstractController: +handleRequest()
+      class AbstractUrlViewController{
+          #handleRequestInternal()
+          #getViewNameForRequest()
+      }
+      class BaseCommandController{
+      }
+```
+
+```mermaid
+classDiagram
+      Animal <|-- Duck
+      Animal <|-- Fish
+      Animal <|-- Zebra
+      Animal : +int age
+      Animal : +String gender
+      Animal: +isMammal()
+      Animal: +mate()
+      class Duck{
+          +String beakColor
+          +swim()
+          +quack()
+      }
+      class Fish{
+          -int sizeInFeet
+          -canEat()
+      }
+      class Zebra{
+          +bool is_wild
+          +run()
+      }
+```
 
 </br></br>
 
