@@ -162,9 +162,9 @@ classDiagram
       }
 ```   
 
-- "용량이 부족하니, 파일을 압축해서 저장해줘."         => CompressedStorage
-- "보안 강화가 필요하니, 파일을 암호화해서 저장해줘."   => EncryptedStorage
-
+> "용량이 부족하니, 파일을 압축해서 저장해줘."         => CompressedStorage  
+> "보안 강화가 필요하니, 파일을 암호화해서 저장해줘."   => EncryptedStorage  
+   
 ```mermaid  
 classDiagram
       Storage <|-- CompressedStorage      
@@ -180,10 +180,10 @@ classDiagram
       }
 ```   
    
-- "압축을 먼저하고, 암호화해서 저장해줘."     => CompressedEncryptedStorage
-- "암호화를 먼저하고, 압축해서 저장해줘."     => EncryptedCompressedStorage
-- "캐시가 적용된 저장소가 필요해."           => CacheableStorage
-- "암호화된 저장소에 캐시 적용이 필요해."     => CacheableEncryptedStorage
+> "압축을 먼저하고, 암호화해서 저장해줘."     => CompressedEncryptedStorage  
+> "암호화를 먼저하고, 압축해서 저장해줘."     => EncryptedCompressedStorage  
+> "캐시가 적용된 저장소가 필요해."           => CacheableStorage  
+> "암호화된 저장소에 캐시 적용이 필요해."     => CacheableEncryptedStorage  
 
 ```mermaid  
 classDiagram
@@ -219,7 +219,7 @@ classDiagram
 
 </br></br>
   
-## 4. 상속의 오용 문제
+## 4. 상속 오용의 문제
 
 </br></br>
   
