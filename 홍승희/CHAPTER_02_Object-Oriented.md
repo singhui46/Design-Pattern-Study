@@ -81,5 +81,12 @@ password를 `복호화`하고,
 ``` sequence
 Main ----- CreateDbConnection() -----> [DB에 연결하는 객체] ----- ReadConfig() -----> [파일 읽기 객체] ----- DecryptConnString() -----> [암호화 처리 객체]
 ``` 
+```uml
+Alice -> Bob: Authentication Request
+Bob --> Alice: Authentication Response
+
+Alice -> Bob: Another authentication Request
+Alice <-- Bob: another authentication Response
+```
 
   
