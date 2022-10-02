@@ -230,6 +230,31 @@ classDiagram
 </br></br>
   
 ## 4. 상속 오용의 문제
+- 개발자가 싱속 자체를 잘못 사용한 경우 
+
+</br>
+* Container 클래스  
+- 컨테이너의 수화물 목록을 관리하는 클래스 
+- 수화물을 넣는다
+- 수화물을 뺀다
+- 수화물을 넣을 수 있는지 확인한다
+
+=> 개발자, *"직접 구현하지 않고, ArrayList 클래스의 기능을 상속받아서 사용할래!"*  
+ex. 
+```cs
+public class Container extends ArrayList<Luggage>
+{
+      private int maxSize;
+      private int currentSize;
+      
+      public Container(int maxSize)
+      {
+            this.maxSize = maxSize;
+      }
+      
+      public void Put
+}
+```
 
 </br></br>
   
