@@ -140,12 +140,39 @@ graph RL
 
 ## 4. 소스 코드 의존과 런타임 의존  
 
-- 소스코드 상에서의 의존은 역전되었지만, 런타임에서의 의존은 상위 모듈에서 하위 모듈의 객체로 향한다.  
+- 소스코드 상에서의 의존은 역전되었지만, `런타임에서의 의존`은 `상위 모듈에서 하위 모듈의 객체로 향한다`.  
+
+</br>
+
+**- 소스코드의 의존**
+```mermaid 
+graph LR
+  FlowController -->|의존|IByteReader  
+```
+```mermaid 
+graph RL 
+  FileDataReader -->|구현|IByteReader  
+  SocketDataReader -->|구현|IByteReader  
+```
+
+**- 런타임에서의 객체 의존**
+```mermaid 
+graph LR
+  FlowController -->|의존|FileDataReader  
+```
+
+- 런타임에서의 의존과 소스 코드 상의 의존을 구분할 수 있어야 한다.  
+- 즉, `의존 역전 원칙`은 소스 코드의 의존을 역전시키는 것이지 `런타임의 의존을 역전시키는 것은 아니다.`  
+
+</br>
+</br>
+
+## 5. 의존 역전 원칙과 패키지  
+
 - 
-
-
 </br>
 </br>
+
 https://stackoverflow.com/questions/27978841/what-is-meant-by-inversion-in-dependency-inversion
 
 
