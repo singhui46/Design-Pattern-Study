@@ -36,9 +36,9 @@
 - FlowController: `(1)`파일에서 바이트 데이터를 읽어와 / `(2)`암호화 하고 / `(3)`파일에 결과 데이터를 쓴다.  
 
 **2) 저수준 모듈**    
-- `(1)` FileDataReader: 파일에서 바이트 데이터를 읽어오는 모듈  
-- `(2)` ByteEncryptor: AES 알고리즘으로 암호화하는 모듈  
-- `(3)` FileDataWriter: 파일에 결과 데이터를 쓰는 모듈  
+- FileDataReader: `(1)`파일에서 바이트 데이터를 읽어오는 모듈  
+- ByteEncryptor: `(2)`AES 알고리즘으로 암호화하는 모듈  
+- FileDataWriter: `(3)`파일에 결과 데이터를 쓰는 모듈  
 
 ⇨
    
