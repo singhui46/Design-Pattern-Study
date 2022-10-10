@@ -12,7 +12,7 @@
 
 [개요](#개요)  
 </br>
-1. [캡슐화 손상](#1-캡슐화-손상)  
+1. [상위 모듈, 하위 모듈](#1-상위-모듈-하위-모듈)  
 2. [결합도 증가](#2-결합도-증가)  
 3. [클래스 폭발(= 조합의 폭발) 문제](#3-클래스-폭발-문제)  
 4. [상속 오용의 문제](#4-상속-오용의-문제)  
@@ -27,8 +27,7 @@
 
 </br>
 
-## 1. 상위 모듈, 하위 모듈  
-### 1. 정의   
+## 1. 상위 모듈, 하위 모듈 
 **1) 상위 모듈(= 고수준 모듈)**   
 - 어떤 `의미 있는 단일 기능`을 제공하는 모듈  
 
@@ -100,11 +99,9 @@ public class FlowController
   
 </br>
 
-→ 어떻게 개선하면 좋을까❔  
-- 상위 모듈이 하위 모듈에 의존하지 않도록 수정해야 한다.  
-
-- 의존 관계 역전 원칙에 따르면,  
-- 상위와 하위 객체 모두가 `동일한 추상화에 의존`해야 한다. 
+- 어떻게 개선하면 좋을까❔  
+→ 상위 모듈이 하위 모듈에 의존하지 않도록 수정해야 한다.  
+→ 의존 역전 원칙에 따르면, 상위와 하위 객체 모두가 `동일한 추상화에 의존`해야 한다.   
 
 </br>
 
@@ -121,62 +118,13 @@ graph LR
 ```mermaid 
 graph LR
   FlowController -->|의존|IByteReader  
-  IByteReader <--|구현|FileDataReader
-  IByteReader <--|구현|SocketDataReader
 ```
 
 ```mermaid 
-graph LR
+graph RL 
   FileDataReader -->|구현|IByteReader  
   SocketDataReader -->|구현|IByteReader  
 ```
 
 
-
-
-
-
-- Q. 그렇다면, 고수준 모듈이 저수준 모듈의 구현으로부터 독립되게 하려면 어떻게 해야 할까?*
-- A. 의존 역전 원칙
-  => 의존 역전 원칙은 `저수준 모듈이 고수준 모듈을 의존`하게 만들어 이러한 문제를 해결한다.     
-  => 즉, `의존이 역전`되는 것임.  
-  => How is it possible?!  
-  => **추상화**
-  
-</br>
-
-
-## 2. 의존 역전 원칙을 통한 변경의 유연성 확보
-
-- AS-IS
-```mermaid 
-graph LR
-  FlowController -->|의존| FileDataReader
-```
-
-- TO-BE
-```mermaid 
-graph LR
-  FlowController -->|추상 타입에 의존| IByteReader  
-  FileDataReader -->|구현| IByteReader
-  SocketDataReader -->|구현| IByteReader
-```
-
-</br>
-
-- FlowController는 추상화된 IByteReader 인터페이스에 의존하지만,   
-- 하지만 구체화된 FileDataReader 클래스에는 의존하지 않는다.  
-
-</br>
-
-- 고수준 모듈과 저수준 모듈이 `모두 추상 타입에 의존`하게 만듦으로써  
-- 고수준 모듈의 변경 없이 저수준 모듈을 변경할 수 있는 유연함을 얻게 되었다.  
-
-</br>
-
-## 3. 소스 코드 의존과 런타임 의존
-
-
-=>   
-"추상화에 의존해야지, 구체화에 의존하면 안된다"
 
